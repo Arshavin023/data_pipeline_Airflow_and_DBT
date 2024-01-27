@@ -1,0 +1,2 @@
+# To run the test on the Docker terminal
+- soda scan -d dataset_name_on_bigquery -c include/soda/configuration.yml include/soda/checks/sources/raw_invoices.yml

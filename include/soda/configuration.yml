@@ -1,0 +1,15 @@
+# contain soda connection to bigquery to be used for data quality
+data_source retail:
+  type: bigquery
+  connection:
+    account_info_json_path: /usr/local/airflow/include/gcp/service_account.json
+    auth_scopes:
+    - https://www.googleapis.com/auth/bigquery
+    - https://www.googleapis.com/auth/cloud-platform
+    - https://www.googleapis.com/auth/drive
+    project_id: 'analytics_engineering'
+    dataset: retail
+# soda_cloud:
+#   host: cloud.soda.io
+#   api_key_id: 9e53eb2a-df36-4ddc-982d-bd01513c480b
+#   api_key_secret: by7VgaKPYXj98PIBJ72gM4jLNFJB4gb9EO1DHGuX0S0th6hTeucZag
