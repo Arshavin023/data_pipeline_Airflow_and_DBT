@@ -15,7 +15,7 @@ from airflow.models.baseoperator import chain
 
 
 @dag(
-    start_date = datetime(2024,1,15),
+    start_date = datetime(2024,1,29),
     schedule=None,
     catchup=False,
     tags = ['retail'],)
