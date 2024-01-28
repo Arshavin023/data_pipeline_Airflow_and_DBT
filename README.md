@@ -1,5 +1,7 @@
 Overview
 ========
+![airflow_dbt_astro_cosmos](https://github.com/Arshavin023/data_pipeline_with_airflow_astro_comos_and_dbt/assets/77532336/65fcc5c2-1b9a-4b64-93b4-8752c1e0468b)
+
 
 Welcome to Astronomer! This project was generated after you ran 'astro dev init' using the Astronomer CLI. This readme describes the contents of the project, as well as how to run Apache Airflow on your local machine.
 
