@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: retail
+    database: analytics_engineering # Put the project id!
+
+    tables:
+      - name: raw_invoices
+			- name: country
