@@ -12,13 +12,28 @@ from cosmos.airflow.task_group import DbtTaskGroup
 from cosmos.constants import LoadMode
 from cosmos.config import RenderConfig
 from airflow.models.baseoperator import chain
+from airflow.providers.apprise.notifications.apprise import send_apprise_notification
+from apprise import NotifyType
 
 @dag(
-    start_date=datetime(2024, 2, 29),
+    start_date=datetime(2024, 3, 29),
     schedule='0 1 * * *',
     catchup=False,
-    tags=['retail'],
-)
+    tags=['retail data data pipeline'],
+    on_failure_callback=send_apprise_notification(
+        title='Airflow Task Failed',
+        body='Task {{ task_instance_key_str }} failed',
+        notify_type=NotifyType.FAILURE,
+        apprise_conn_id='notifier',
+        tag='alerts'),
+    on_success_callback=send_apprise_notification(
+        title='Airflow DAG successfully completed',
+        body='Task {{ task_instance_key_str }} completed',
+        notify_type=NotifyType.SUCCESS,
+        apprise_conn_id='notifier',
+        tag='alerts')
+        )
+
 def retail():
     @task
     def check_upload_csv_to_gcs():

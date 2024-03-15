@@ -7,3 +7,4 @@ sources:
     tables:
       - name: raw_invoices
       - name: country
+
